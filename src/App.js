@@ -1,8 +1,12 @@
+import { Header } from './components/Header'
+import Home from './pages/Home'
+
 function App() {
   return (
-    <div className="App">
-      <h1>olá mundo</h1>
-    </div>
+    <>
+      <Header />
+      <Home />
+    </>
   )
 }
 
