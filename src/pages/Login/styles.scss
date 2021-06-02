@@ -1,0 +1,34 @@
+.section-login {
+  display: flex;
+  align-items: center;
+  gap: 6rem;
+}
+
+.box-image {
+  width: 100%;
+  max-width: 60rem;
+}
+
+.box-form {
+  width: 100%;
+  max-width: 50rem;
+  padding: 2rem 0;
+
+  h2 {
+    font-size: 3.2rem;
+    font-weight: 600;
+    margin-bottom: 3rem;
+  }
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    display: block;
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    margin-bottom: 2rem;
+  }
+}

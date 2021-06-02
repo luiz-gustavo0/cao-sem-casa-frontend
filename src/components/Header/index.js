@@ -1,11 +1,15 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { Link } from 'react-router-dom'
+
+import { AuthContext } from '../../context/AuthContext'
+
 import { ReactComponent as Logo } from '../../assets/logo-header.svg'
-// import { Link } from 'react-router-dom'
 
 import './styles.scss'
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false)
+  const { userInfo, logout } = useContext(AuthContext)
 
   return (
     <header className="header">
@@ -14,7 +18,8 @@ const Header = () => {
         <nav className={`header-menu ${isActive ? 'active' : ''} `}>
           <ul>
             <li>
-              <a href="#">HOME</a>
+              <Link to="/">HOME</Link>
+              {/* <a href="#"></a> */}
             </li>
             <li>
               <a href="#">SOBRE NÓS</a>
@@ -29,10 +34,26 @@ const Header = () => {
               <a href="#">CONTATO</a>
             </li>
           </ul>
-          <div className="btn-group">
-            <button className="btn-login">Entrar</button>
-            <button className="btn-cadastrar">Cadastrar</button>
-          </div>
+
+          {userInfo ? (
+            <div className="user-info">
+              <span>
+                <Link to="/conta">{userInfo.name}</Link>
+              </span>
+              <button className="btn-logout" onClick={logout}>
+                Sair
+              </button>
+            </div>
+          ) : (
+            <div className="btn-group">
+              <Link to="/login" className="btn-login">
+                Entrar
+              </Link>
+              <Link to="/register" className="btn-cadastrar">
+                Cadastrar
+              </Link>
+            </div>
+          )}
         </nav>
         <button
           className="btn-mobile"

@@ -36,8 +36,12 @@ ul {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+}
+
 .container {
   max-width: 120rem;
   margin: 0 auto;
-  padding: 0 2rem;
+  padding: 0rem 2rem;
 }

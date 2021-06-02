@@ -1,11 +1,17 @@
+import { BrowserRouter } from 'react-router-dom'
 import { Header } from './components/Header'
-import Home from './pages/Home'
+import { AuthProvider } from './context/AuthContext'
+import Routes from './routes'
 
 function App() {
   return (
     <>
-      <Header />
-      <Home />
+      <BrowserRouter>
+        <AuthProvider>
+          <Header />
+          <Routes />
+        </AuthProvider>
+      </BrowserRouter>
     </>
   )
 }

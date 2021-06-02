@@ -6,7 +6,8 @@
 .header-container {
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 .header-menu {
@@ -47,9 +48,10 @@
   .btn-login,
   .btn-cadastrar {
     font-size: 1.4rem;
-    padding: 1rem;
+    padding: 1rem 2rem;
     cursor: pointer;
     text-transform: uppercase;
+    text-align: center;
     color: var(--gray-color);
     transition: all 0.2s;
 
@@ -96,6 +98,35 @@
   border: none;
 }
 
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+
+  span {
+    font-size: 1.2rem;
+
+    a {
+      color: inherit;
+    }
+  }
+
+  .btn-logout {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    padding: 0.5rem 2rem;
+    border: 1px solid var(--gray-color);
+    border-radius: 0.5rem;
+    color: var(--white-color);
+    background: var(--gray-color);
+    transition: all 0.2s;
+
+    &:hover {
+      filter: brightness(0.9);
+    }
+  }
+}
+
 @media (max-width: 600px) {
   .header-container {
     justify-content: space-between;
@@ -110,8 +141,9 @@
       width: 100%;
       position: absolute;
       top: 10rem;
+      left: 0;
       height: calc(100vh - 10rem);
-      padding: 4rem 1rem;
+      padding: 4rem 2rem;
       background: var(--primary-color);
       z-index: 1000;
 
@@ -122,7 +154,7 @@
           color: var(--white-color);
 
           &:hover {
-            color: var(--secundary-color);
+            color: var(--gray-color);
           }
         }
       }
@@ -143,7 +175,6 @@
 
     .btn-cadastrar {
       width: 100%;
-      // background-color: var(--secundary-color);
       border-color: var(--white-color);
 
       &:hover {
@@ -155,5 +186,18 @@
 
   .btn-mobile {
     display: block;
+  }
+
+  .user-info {
+    flex-direction: column;
+    margin-top: 3rem;
+
+    .btn-logout {
+      width: 100%;
+      padding: 1rem 2rem;
+
+      // background: none;
+      // color: var(--gray-color);
+    }
   }
 }
