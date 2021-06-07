@@ -19,7 +19,6 @@ const Header = () => {
           <ul>
             <li>
               <Link to="/">HOME</Link>
-              {/* <a href="#"></a> */}
             </li>
             <li>
               <a href="#">SOBRE NÓS</a>

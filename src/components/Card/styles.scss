@@ -1,0 +1,62 @@
+.card-container {
+  max-width: 300rem;
+  border-radius: 0.5rem;
+  font-size: 1.4rem;
+  overflow-x: hidden;
+  box-shadow: 0.3rem 0.3rem 0.3rem rgba(112, 108, 97, 25%);
+
+  .box-card-img {
+    img {
+      height: 20rem;
+      object-fit: cover;
+    }
+  }
+
+  .card-info {
+    padding: 2rem 1rem;
+
+    .animal-info {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.3rem;
+
+      h3 {
+        font-size: 2.4rem;
+        font-weight: 600;
+      }
+    }
+
+    .animal-idade {
+      display: inline-block;
+      text-align: center;
+      font-size: 1.1rem;
+      border-radius: 5rem;
+      padding: 0.2rem 2rem;
+      margin-bottom: 2rem;
+      color: var(--white-color);
+    }
+
+    .description {
+      color: var(--gray-color);
+      margin-bottom: 2rem;
+    }
+
+    .btn-adotar {
+      display: block;
+      font-size: 1.6rem;
+      text-align: center;
+      background: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      padding: 1rem 2rem;
+      border-radius: 0.5rem;
+      color: #fff;
+
+      &:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        background: #fff;
+      }
+    }
+  }
+}

@@ -25,6 +25,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: var(--black-color);
+  behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 img {

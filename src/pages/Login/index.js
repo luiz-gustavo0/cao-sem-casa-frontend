@@ -28,7 +28,7 @@ const Login = () => {
     resolver: yupResolver(schema)
   })
 
-  const { login } = useContext(AuthContext)
+  const { login, loading, error } = useContext(AuthContext)
 
   const onSubmit = async ({ email, password }) => {
     login(email, password)
@@ -47,8 +47,10 @@ const Login = () => {
           <input type="password" {...register('password')} />
           <p>{errors.password?.message}</p>
 
-          <button>Entrar</button>
+          {loading ? <button>Entrando...</button> : <button>Entrar</button>}
         </form>
+
+        {error && <p>{error}</p>}
       </div>
     </section>
   )
