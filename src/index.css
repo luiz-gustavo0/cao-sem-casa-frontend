@@ -42,6 +42,10 @@ a {
   text-decoration: none;
 }
 
+button {
+  cursor: pointer;
+}
+
 .container {
   max-width: 120rem;
   margin: 0 auto;

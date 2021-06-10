@@ -13,7 +13,7 @@
   }
 
   .card-info {
-    padding: 2rem 1rem;
+    padding: 2rem 1rem 1.5rem;
 
     .animal-info {
       display: flex;
@@ -43,14 +43,15 @@
     }
 
     .btn-adotar {
-      display: block;
+      width: 100%;
       font-size: 1.6rem;
       text-align: center;
       background: var(--primary-color);
       border: 1px solid var(--primary-color);
-      padding: 1rem 2rem;
+      padding: 1.2rem 2rem;
       border-radius: 0.5rem;
       color: #fff;
+      transition: all 0.2s;
 
       &:hover {
         border-color: var(--primary-color);

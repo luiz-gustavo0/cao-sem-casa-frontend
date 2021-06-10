@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons'
 
@@ -38,9 +38,10 @@ const Card = ({ data }) => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, nemo
           fuga, dicta quae dolorum dolor deleniti earum vitae.
         </p>
-        <Link to="adotar" className="btn-adotar">
+        <button className="btn-adotar">Adotar</button>
+        {/* <Link to="adotar" className="btn-adotar">
           Adotar
-        </Link>
+        </Link> */}
       </div>
     </li>
   )

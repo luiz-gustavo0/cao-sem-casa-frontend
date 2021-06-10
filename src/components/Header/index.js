@@ -8,8 +8,9 @@ import { ReactComponent as Logo } from '../../assets/logo-header.svg'
 import './styles.scss'
 
 const Header = () => {
-  const [isActive, setIsActive] = useState(false)
   const { userInfo, logout } = useContext(AuthContext)
+  const [isActive, setIsActive] = useState(false)
+  const [openDopdown, setOpenDopdown] = useState(false)
 
   return (
     <header className="header">
@@ -36,20 +37,22 @@ const Header = () => {
 
           {userInfo ? (
             <div className="user-info">
-              <span>
-                <Link to="/conta">{userInfo.name}</Link>
+              <span onClick={() => setOpenDopdown(!openDopdown)}>
+                {userInfo.name.substr(0, 1)}
               </span>
-              <button className="btn-logout" onClick={logout}>
-                Sair
-              </button>
+              <div
+                className={`dropdown ${openDopdown ? 'dropdown-active' : ''}`}
+              >
+                <Link to="/conta">Minha conta</Link>
+                <button className="btn-logout" onClick={logout}>
+                  Sair
+                </button>
+              </div>
             </div>
           ) : (
             <div className="btn-group">
               <Link to="/login" className="btn-login">
                 Entrar
-              </Link>
-              <Link to="/register" className="btn-cadastrar">
-                Cadastrar
               </Link>
             </div>
           )}
