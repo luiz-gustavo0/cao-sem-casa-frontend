@@ -3,10 +3,10 @@ import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
-import heroImage from '../../assets/hero.png'
-
 import './styles.scss'
 import { AuthContext } from '../../context/AuthContext'
+import Input from '../../components/Input'
+import { Link } from 'react-router-dom'
 
 const schema = yup.object().shape({
   email: yup
@@ -36,19 +36,38 @@ const Login = () => {
 
   return (
     <section className="container section-login">
-      <div className="box-image">
-        <img src={heroImage} alt="Imagem de um homem com um cachorro" />
-      </div>
       <div className="box-form">
-        <h2>Entrar</h2>
+        <h2>Login</h2>
         <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-          <input type="email" {...register('email')} />
-          <p>{errors.email?.message}</p>
-          <input type="password" {...register('password')} />
-          <p>{errors.password?.message}</p>
+          <Input
+            label="Email"
+            type="email"
+            name="email"
+            placeholder="Digite seu email"
+            register={register}
+            errors={errors}
+            required
+          />
+          <Input
+            label="Senha"
+            type="password"
+            name="password"
+            placeholder="Digite sua senha"
+            register={register}
+            errors={errors}
+            required
+          />
 
-          {loading ? <button>Entrando...</button> : <button>Entrar</button>}
+          {loading ? (
+            <button disabled>Entrando...</button>
+          ) : (
+            <button>Entrar</button>
+          )}
         </form>
+        <div className="box-redirect">
+          <Link to="/register">Cadastre-se!</Link>|
+          <Link to="/forgot_password">Esqueceu sua senha?</Link>
+        </div>
 
         {error && <p>{error}</p>}
       </div>
