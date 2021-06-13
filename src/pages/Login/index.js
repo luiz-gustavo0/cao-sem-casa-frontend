@@ -38,6 +38,9 @@ const Login = () => {
     <section className="container section-login">
       <div className="box-form">
         <h2>Login</h2>
+
+        {error && <span className="box-form-error">* {error}</span>}
+
         <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
           <Input
             label="Email"
@@ -68,8 +71,6 @@ const Login = () => {
           <Link to="/register">Cadastre-se!</Link>|
           <Link to="/forgot_password">Esqueceu sua senha?</Link>
         </div>
-
-        {error && <p>{error}</p>}
       </div>
     </section>
   )

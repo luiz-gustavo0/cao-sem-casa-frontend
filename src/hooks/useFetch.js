@@ -15,7 +15,7 @@ const useFetch = () => {
 
       response = await api(method, url, data)
 
-      if (response.status !== 200) {
+      if (response.status !== 200 && response.status !== 201) {
         throw new Error(response)
       }
     } catch (err) {
@@ -24,8 +24,11 @@ const useFetch = () => {
       setError(err.response.data.message)
     } finally {
       setLoading(false)
-      setData(response.data)
-      console.log('Response usefetch: ', response)
+      if (response === null) {
+        setData(null)
+      } else {
+        setData(response.data)
+      }
       // eslint-disable-next-line no-unsafe-finally
       return { response }
     }

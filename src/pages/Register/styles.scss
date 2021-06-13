@@ -1,7 +1,7 @@
-.section-login {
+.section-register {
   padding: 6rem 2rem;
 
-  .box-form {
+  .form-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,13 +16,19 @@
       margin-bottom: 3rem;
     }
 
-    .login-form {
+    form {
       width: 100%;
-      max-width: 40rem;
-      display: flex;
-      flex-direction: column;
-
+      max-width: 50rem;
       padding: 2rem;
+
+      .form-group {
+        display: flex;
+        align-items: center;
+      }
+
+      .form-group div + div {
+        margin-left: 2rem;
+      }
 
       button {
         padding: 1.5rem 2rem;
@@ -46,15 +52,7 @@
       }
     }
 
-    .box-form-error {
-      display: inline-block;
-      background: rgba(250, 14, 14, 0.726);
-      padding: 0.5rem 2rem;
-      color: #fff;
-      font-size: 1.4rem;
-    }
-
-    .box-redirect {
+    .box-redirect-login {
       width: 100%;
       max-width: 40rem;
       padding: 0 2rem;
@@ -77,9 +75,22 @@
   }
 }
 
-@media (max-width: 425px) {
-  .box-redirect {
-    flex-direction: column;
-    gap: 0.5rem !important;
+@media (max-width: 500px) {
+  .section-register {
+    .form-container {
+      h2 {
+        font-size: 3rem;
+      }
+      form {
+        padding: 2rem 0;
+        .form-group {
+          flex-direction: column;
+        }
+
+        .form-group div + div {
+          margin-left: 0;
+        }
+      }
+    }
   }
 }
