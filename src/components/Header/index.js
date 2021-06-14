@@ -28,7 +28,7 @@ const Header = () => {
               <a href="#">AJUDAR</a>
             </li>
             <li>
-              <a href="#">ADOTAR</a>
+              <Link to="/adotar">ADOTAR</Link>
             </li>
             <li>
               <a href="#">CONTATO</a>

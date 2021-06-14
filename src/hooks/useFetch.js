@@ -2,7 +2,7 @@ import { useCallback, useState } from 'react'
 import api from '../services/api'
 
 const useFetch = () => {
-  const [data, setData] = useState(null)
+  const [data, setData] = useState([])
   const [error, setError] = useState(null)
   const [loading, setLoading] = useState(false)
 
@@ -25,7 +25,7 @@ const useFetch = () => {
     } finally {
       setLoading(false)
       if (response === null) {
-        setData(null)
+        setData([])
       } else {
         setData(response.data)
       }
