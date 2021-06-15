@@ -1,12 +1,13 @@
 import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
-import './styles.scss'
 import { AuthContext } from '../../context/AuthContext'
 import Input from '../../components/Input'
-import { Link } from 'react-router-dom'
+
+import './styles.scss'
 
 const schema = yup.object().shape({
   email: yup

@@ -41,8 +41,7 @@ const Card = ({ data }) => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, nemo
           fuga, dicta quae dolorum dolor deleniti earum vitae.
         </p>
-        {/* <button className="btn-adotar">Adotar</button> */}
-        <Link to={`adotar/${id}`} className="btn-adotar">
+        <Link to={`/animal-profile/${id}`} className="btn-adotar">
           Ver perfil
         </Link>
       </div>
