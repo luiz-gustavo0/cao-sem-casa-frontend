@@ -12,14 +12,14 @@ const Home = () => {
   const { data, loading, error, request } = useFetch()
 
   useEffect(() => {
-    async function fetchDataANimals() {
+    async function fetchDataAnimals() {
       await request({
         method: 'get',
         url: '/pets'
       })
     }
 
-    fetchDataANimals()
+    fetchDataAnimals()
   }, [])
 
   return (

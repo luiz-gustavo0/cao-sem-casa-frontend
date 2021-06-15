@@ -1,0 +1,39 @@
+.input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  label {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+    color: var(--gray-color);
+  }
+
+  input {
+    font-size: 1.6rem;
+    padding: 0.8rem;
+    border: 1px solid rgba(153, 153, 153, 0.596);
+    border-radius: 0.5rem;
+    background: #fff;
+    color: var(--gray-color);
+    margin-bottom: 0.3rem;
+    transition: all 0.2s;
+
+    &:hover,
+    &:focus {
+      border-color: var(--gray-color);
+    }
+
+    &:invalid,
+    &:required {
+      border-color: rgba(255, 0, 0, 0.877);
+    }
+  }
+
+  .error {
+    color: rgba(255, 0, 0, 0.877);
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+}

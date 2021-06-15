@@ -24,6 +24,7 @@ export const AuthProvider = ({ children }) => {
     if (storagedToken && sotragedUser) {
       setUserInfo(JSON.parse(sotragedUser))
       api.defaults.headers.Authorization = `Bearer ${storagedToken}`
+      setUserLogged(true)
     }
     setLoading(false)
   }, [])

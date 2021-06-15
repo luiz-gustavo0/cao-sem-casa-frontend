@@ -1,13 +1,14 @@
 /* eslint-disable react/prop-types */
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMars, faVenus } from '@fortawesome/free-solid-svg-icons'
 
 import './styles.scss'
+import { Link } from 'react-router-dom'
 
 const Card = ({ data }) => {
-  const { name, sexo, idade, foto_url } = data
+  const { id, name, sexo, idade, foto_url } = data
 
   return (
     <li className="card-container">
@@ -16,13 +17,15 @@ const Card = ({ data }) => {
       </div>
       <div className="card-info">
         <div className="animal-info">
-          <h3>{name}</h3>
+          <Link to={`/adotar/${id}`}>
+            <h3>{name}</h3>
+          </Link>
 
           <span>
             {sexo == 'M' ? (
-              <FontAwesomeIcon icon={faVenus} size="2x" color="#E5446D" />
-            ) : (
               <FontAwesomeIcon icon={faMars} size="2x" color="#706C61" />
+            ) : (
+              <FontAwesomeIcon icon={faVenus} size="2x" color="#E5446D" />
             )}
           </span>
         </div>
@@ -38,8 +41,8 @@ const Card = ({ data }) => {
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, nemo
           fuga, dicta quae dolorum dolor deleniti earum vitae.
         </p>
-        <Link to="adotar" className="btn-adotar">
-          Adotar
+        <Link to={`/animal-profile/${id}`} className="btn-adotar">
+          Ver perfil
         </Link>
       </div>
     </li>

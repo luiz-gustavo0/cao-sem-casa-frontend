@@ -15,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 6rem;
+  gap: 4rem;
 
   ul {
     display: flex;
@@ -31,6 +31,8 @@
         text-decoration: none;
         transition: all 0.3s;
 
+        &:active,
+        &:focus,
         &:hover {
           color: var(--primary-color);
           transform: translateY(-0.1rem);
@@ -43,46 +45,26 @@
 .btn-group {
   display: flex;
   align-items: center;
-  gap: 2rem;
 
-  .btn-login,
-  .btn-cadastrar {
+  .btn-login {
     font-size: 1.4rem;
     padding: 1rem 2rem;
     cursor: pointer;
     text-transform: uppercase;
     text-align: center;
     color: var(--gray-color);
-    transition: all 0.2s;
 
-    &:active,
-    &:focus {
-      transform: translateY(-0.1rem);
-    }
-  }
-
-  .btn-login {
-    background: none;
-    border: none;
-    border: 1px solid transparent;
-
-    &:hover {
-      background: var(--white-color);
-      border: 1px solid var(--primary-color);
-      color: var(--primary-color);
-      border-radius: 0.5rem;
-      box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
-    }
-  }
-
-  .btn-cadastrar {
     background: var(--white-color);
     border: 1px solid var(--primary-color);
     color: var(--primary-color);
     border-radius: 0.5rem;
-    box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
+    transition: all 0.2s;
 
-    &:hover {
+    &:hover,
+    &:focus {
+      transform: translateY(-0.1rem);
+
       background: var(--primary-color);
       color: var(--white-color);
     }
@@ -99,30 +81,74 @@
 }
 
 .user-info {
-  display: flex;
-  align-items: center;
-  gap: 2rem;
+  // display: flex;
+  // align-items: center;
+  position: relative;
+
+  // rgba(255, 255, 255, 0.644)
 
   span {
-    font-size: 1.2rem;
-
-    a {
-      color: inherit;
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-color);
+    border: 4px solid rgba(255, 255, 255, 0.644);
+    border-radius: 5rem;
+    font-size: 2.5rem;
+    width: 4.5rem;
+    height: 4.5rem;
+    padding: 0.5rem;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.87);
+    cursor: pointer;
   }
 
-  .btn-logout {
-    font-size: 1.4rem;
-    text-transform: uppercase;
-    padding: 0.5rem 2rem;
-    border: 1px solid var(--gray-color);
+  .dropdown {
+    display: none;
+    position: absolute;
+    text-align: center;
+    padding: 1rem 0.5rem;
+    top: 5.5rem;
+    left: 50%;
+    right: 50%;
+    width: 10rem;
     border-radius: 0.5rem;
-    color: var(--white-color);
-    background: var(--gray-color);
-    transition: all 0.2s;
+    background: var(--white-color);
+    box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.2);
 
-    &:hover {
-      filter: brightness(0.9);
+    transform: translateX(-50%);
+
+    a {
+      color: var(--gray-color);
+      display: block;
+      margin-bottom: 1rem;
+      transition: all 0.2s;
+
+      &:hover {
+        color: var(--primary-color-80);
+      }
+    }
+
+    .btn-logout {
+      width: 100%;
+      font-size: 1.4rem;
+      background: none;
+      border: none;
+      font-family: inherit;
+      text-align: left;
+      padding: 0.2rem;
+      color: var(--gray-color);
+      transition: all 0.2s;
+
+      &:hover {
+        color: var(--primary-color-80);
+      }
+    }
+
+    &.dropdown-active {
+      display: block;
     }
   }
 }
@@ -168,19 +194,9 @@
 
     .btn-login {
       width: 100%;
-      color: var(--white-color);
+      color: var(--primary-color);
       border: 1px solid var(--white-color);
       border-radius: 0.5rem;
-    }
-
-    .btn-cadastrar {
-      width: 100%;
-      border-color: var(--white-color);
-
-      &:hover {
-        color: var(--white-color);
-        border-color: var(--white-color);
-      }
     }
   }
 
@@ -195,9 +211,6 @@
     .btn-logout {
       width: 100%;
       padding: 1rem 2rem;
-
-      // background: none;
-      // color: var(--gray-color);
     }
   }
 }

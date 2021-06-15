@@ -10,7 +10,9 @@ function App() {
       <BrowserRouter>
         <AuthProvider>
           <Header />
-          <Routes />
+          <main>
+            <Routes />
+          </main>
           <Footer />
         </AuthProvider>
       </BrowserRouter>
