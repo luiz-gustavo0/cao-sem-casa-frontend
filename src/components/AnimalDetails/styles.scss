@@ -1,0 +1,129 @@
+.xl {
+  &.animal-profile {
+    max-width: 90rem;
+    .animal-foto {
+      img {
+        height: 37rem;
+      }
+    }
+
+    .animal-details {
+      height: 37rem;
+    }
+  }
+}
+
+.animal-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  padding: 4rem 2rem;
+  background: #faf6f6;
+  max-width: 80rem;
+  border-radius: 0.5rem;
+
+  .animal-foto {
+    max-width: 25rem;
+    img {
+      border-radius: 0.5rem;
+      height: 34rem;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  .animal-details {
+    height: 34rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    h3 {
+      font-size: 2.8rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .animal-info-idade {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+
+      span {
+        font-size: 1.2rem;
+        display: inline-block;
+        padding: 0.2rem 1.5rem;
+        background: #7d8c55;
+        color: #fff;
+        border-radius: 0.3rem;
+      }
+    }
+
+    .animal-description {
+      font-size: 1.6rem;
+      padding: 2.5rem 2rem;
+      background: #eeeded;
+      border-radius: 0.5rem;
+    }
+
+    .info-medical {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      font-size: 1.6rem;
+
+      .icon-block {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+
+    a {
+      width: 50%;
+      display: block;
+      font-size: 1.6rem;
+      text-align: center;
+      background: var(--primary-color);
+      border: 1px solid var(--primary-color);
+      padding: 1.2rem 2rem;
+      border-radius: 0.5rem;
+      color: #fff;
+      transition: all 0.2s;
+
+      &:hover {
+        border-color: var(--primary-color);
+        color: var(--primary-color);
+        background: #fff;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .animal-profile {
+    flex-direction: column;
+    align-items: center;
+    gap: 3rem;
+
+    .animal-details {
+      gap: 2rem;
+      height: auto;
+      .info-medical {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 475px) {
+  .animal-profile {
+    .animal-details {
+      a {
+        width: 100%;
+      }
+    }
+  }
+}

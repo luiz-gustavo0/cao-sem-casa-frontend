@@ -29,6 +29,14 @@
     &:required {
       border-color: rgba(255, 0, 0, 0.877);
     }
+
+    &:disabled {
+      background: rgba(153, 153, 153, 0.192);
+
+      &:hover {
+        border-color: rgba(153, 153, 153, 0.192);
+      }
+    }
   }
 
   .error {

@@ -29,7 +29,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(false)
   }, [])
 
-  async function login(email, password) {
+  async function login(email, password, location) {
     try {
       setError(null)
       setLoading(true)
@@ -49,10 +49,9 @@ export const AuthProvider = ({ children }) => {
 
       setUserInfo(user)
       setUserLogged(true)
-
-      history.push('/')
+      history.push(location)
     } catch (err) {
-      setError(err.response.data.message)
+      setError(err.response?.data.message)
       setUserLogged(false)
     } finally {
       setLoading(false)

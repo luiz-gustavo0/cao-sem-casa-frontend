@@ -6,6 +6,8 @@ import Adotar from '../pages/Adotar'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import AnimalProfile from '../pages/AnimalProfile'
+import FinalizarAdocao from '../pages/FinalizarAdocao'
+import PrivateRoute from '../components/PrivateRoute'
 
 const Routes = () => {
   return (
@@ -15,6 +17,10 @@ const Routes = () => {
       <Route path="/register" component={Register} />
       <Route path="/adotar" component={Adotar} />
       <Route path="/animal-profile/:id" component={AnimalProfile} />
+      <PrivateRoute path="/finalizar-adocao/:id">
+        <FinalizarAdocao />
+      </PrivateRoute>
+      {/* <Route path="/finalizar-adocao/:id" component={FinalizarAdocao} /> */}
     </Switch>
   )
 }

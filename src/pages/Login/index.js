@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -31,8 +31,11 @@ const Login = () => {
 
   const { login, loading, error } = useContext(AuthContext)
 
+  const location = useLocation()
+
+  let { from } = location.state || { from: { pathname: '/' } }
   const onSubmit = async ({ email, password }) => {
-    login(email, password)
+    login(email, password, from)
   }
 
   return (
