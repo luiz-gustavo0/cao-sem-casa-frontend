@@ -5,22 +5,6 @@ import { useToasts } from 'react-toast-notifications'
 
 import './styles.scss'
 
-// export const ToastDemo = ({ content }) => {
-//   const { addToast } = useToasts()
-//   return (
-//     <Button
-//       onClick={() =>
-//         addToast(content, {
-//           appearance: 'success',
-//           autoDismiss: true
-//         })
-//       }
-//     >
-//       Add Toast
-//     </Button>
-//   )
-// }
-
 const Contact = () => {
   const [userName, setUserName] = useState('')
   const [userEmail, setUserEmail] = useState('')
