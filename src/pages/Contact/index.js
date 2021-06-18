@@ -1,14 +1,33 @@
 /* eslint-disable no-undef */
 import React, { useState } from 'react'
 import emailjs from 'emailjs-com'
+import { useToasts } from 'react-toast-notifications'
 
 import './styles.scss'
+
+// export const ToastDemo = ({ content }) => {
+//   const { addToast } = useToasts()
+//   return (
+//     <Button
+//       onClick={() =>
+//         addToast(content, {
+//           appearance: 'success',
+//           autoDismiss: true
+//         })
+//       }
+//     >
+//       Add Toast
+//     </Button>
+//   )
+// }
 
 const Contact = () => {
   const [userName, setUserName] = useState('')
   const [userEmail, setUserEmail] = useState('')
   const [message, setMessage] = useState('')
   const [loading, setLoading] = useState(false)
+
+  const { addToast } = useToasts()
 
   async function sendEmail(e) {
     e.preventDefault()
@@ -25,12 +44,20 @@ const Contact = () => {
         setUserName('')
         setUserEmail('')
         setMessage('')
+        addToast('Mensagem enviada com sucesso', {
+          appearance: 'success',
+          autoDismiss: true
+        })
         setLoading(false)
       }
 
       console.log(result)
     } catch (error) {
       console.log(error.text)
+      addToast(`Não foi possivel enviar sua mensagem \n Error: ${error.text}`, {
+        appearance: 'success',
+        autoDismiss: true
+      })
     }
   }
   return (
