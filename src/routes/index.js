@@ -8,6 +8,7 @@ import Register from '../pages/Register'
 import AnimalProfile from '../pages/AnimalProfile'
 import FinalizarAdocao from '../pages/FinalizarAdocao'
 import PrivateRoute from '../components/PrivateRoute'
+import Contact from '../pages/Contact'
 
 const Routes = () => {
   return (
@@ -17,6 +18,7 @@ const Routes = () => {
       <Route path="/register" component={Register} />
       <Route path="/adotar" component={Adotar} />
       <Route path="/animal-profile/:id" component={AnimalProfile} />
+      <Route path="/contact" component={Contact} />
       <PrivateRoute path="/finalizar-adocao/:id">
         <FinalizarAdocao />
       </PrivateRoute>

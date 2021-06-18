@@ -31,7 +31,7 @@ const Header = () => {
               <Link to="/adotar">ADOTAR</Link>
             </li>
             <li>
-              <a href="#">CONTATO</a>
+              <a href="contact">CONTATO</a>
             </li>
           </ul>
 

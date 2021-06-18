@@ -25,8 +25,7 @@
       border-color: var(--gray-color);
     }
 
-    &:invalid,
-    &:required {
+    &:invalid {
       border-color: rgba(255, 0, 0, 0.877);
     }
 
