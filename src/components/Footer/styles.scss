@@ -73,6 +73,12 @@
   }
 }
 
+@media (max-width: 600px) {
+  .footer {
+    font-size: 1.4rem;
+  }
+}
+
 @media (max-width: 475px) {
   .footer-container {
     .footer-menu {

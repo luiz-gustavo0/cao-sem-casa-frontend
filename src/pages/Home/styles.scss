@@ -25,6 +25,7 @@
     .btn-register {
       display: inline-block;
       font-size: 1.6rem;
+      text-transform: uppercase;
       color: var(--white-color);
       padding: 1rem 2.5rem;
       border: 1px solid var(--primary-color);
@@ -51,6 +52,7 @@
 }
 
 .section-about {
+  padding: 6rem 2rem;
   background: var(--primary-color);
   display: flex;
   align-items: center;
@@ -75,7 +77,6 @@
 
     padding: 2rem 4rem;
     color: var(--white-color);
-    font-size: 1.4rem;
 
     h2 {
       font-size: 2.8rem;
@@ -83,6 +84,7 @@
     }
 
     p {
+      font-size: 1.6rem;
       color: #f5f5f5;
     }
   }
@@ -130,14 +132,14 @@
 
 .section-contribute {
   background: var(--primary-color);
-  padding: 6rem 0;
+  padding: 6rem 2rem;
 
   text-align: center;
   color: var(--white-color);
   font-size: 1.6rem;
 
   .box-text {
-    max-width: 80rem;
+    max-width: 70rem;
     h2 {
       font-size: 3.2rem;
       margin-bottom: 2rem;
@@ -151,7 +153,8 @@
 
     a {
       display: inline-block;
-      padding: 1rem 2rem;
+      text-transform: uppercase;
+      padding: 0.8rem 2rem;
       border: 1px solid #fff;
       color: #fff;
       border-radius: 0.5rem;
@@ -168,10 +171,15 @@
   .section-hero {
     flex-direction: column-reverse;
     justify-content: center;
+    align-items: center;
 
     .box-principal {
       width: 100%;
       text-align: center;
+
+      h1 {
+        font-size: 4.8rem;
+      }
     }
 
     .box-img {
@@ -211,12 +219,41 @@
   }
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
+  .section-hero {
+    .box-principal {
+      p,
+      .btn-register {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .section-about {
+    .box-about-text {
+      p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
   .section-animals {
     .box-cards-animals {
       ul {
         align-content: center;
         justify-content: center;
+      }
+    }
+  }
+
+  .section-contribute {
+    .box-text {
+      h2 {
+        font-size: 2.4rem;
+      }
+      p,
+      a {
+        font-size: 1.4rem;
       }
     }
   }

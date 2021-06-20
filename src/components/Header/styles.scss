@@ -81,8 +81,7 @@
 }
 
 .user-info {
-  // display: flex;
-  // align-items: center;
+  display: flex;
   position: relative;
 
   // rgba(255, 255, 255, 0.644)
@@ -153,7 +152,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .header-container {
     justify-content: space-between;
   }
@@ -179,7 +178,8 @@
         a {
           color: var(--white-color);
 
-          &:hover {
+          &:hover,
+          &:focus {
             color: var(--gray-color);
           }
         }
@@ -205,8 +205,20 @@
   }
 
   .user-info {
-    flex-direction: column;
-    margin-top: 3rem;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem auto 0;
+
+    span {
+      color: var(--gray-color);
+      border-color: rgba(97, 97, 97, 0.644);
+      transition: all 0.2s;
+
+      &:hover {
+        color: rgba(255, 255, 255, 0.87);
+        border-color: rgba(255, 255, 255, 0.644);
+      }
+    }
 
     .btn-logout {
       width: 100%;

@@ -56,7 +56,8 @@
     }
 
     button {
-      padding: 1.5rem 2rem;
+      padding: 1rem 2rem;
+      text-transform: uppercase;
       border-radius: 0.5rem;
       border: none;
       background: var(--primary-color);
@@ -72,6 +73,18 @@
       &:disabled {
         background: var(--primary-color-80);
         cursor: wait;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .section-contact {
+    form {
+      label,
+      input,
+      button {
+        font-size: 1.4rem;
       }
     }
   }

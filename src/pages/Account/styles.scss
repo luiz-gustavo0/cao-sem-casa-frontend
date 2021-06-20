@@ -12,11 +12,12 @@
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
-    gap: 2rem;
+    flex-wrap: wrap;
   }
 
   form {
     width: 100%;
+    max-width: 50rem;
 
     fieldset {
       padding: 2rem;
@@ -45,7 +46,8 @@
       color: #fff;
       border-radius: 0.5rem;
       text-transform: uppercase;
-      width: 30%;
+      width: 100%;
+      max-width: 13rem;
       transition: all 0.2s;
 
       &:hover,
@@ -56,6 +58,25 @@
       &:disabled {
         cursor: wait;
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-account {
+    form {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .section-account {
+    .form-group {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0 !important;
     }
   }
 }
