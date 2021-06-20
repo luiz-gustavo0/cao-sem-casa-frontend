@@ -35,14 +35,13 @@ const Contact = () => {
         })
         setLoading(false)
       }
-
-      console.log(result)
     } catch (error) {
       console.log(error.text)
       addToast(`Não foi possivel enviar sua mensagem \n Error: ${error.text}`, {
-        appearance: 'success',
+        appearance: 'error',
         autoDismiss: true
       })
+      setLoading(false)
     }
   }
   return (
