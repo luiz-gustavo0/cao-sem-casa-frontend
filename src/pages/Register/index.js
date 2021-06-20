@@ -1,17 +1,18 @@
 import React, { useContext } from 'react'
+import { Link, Redirect } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 
 import { AuthContext } from '../../context/AuthContext'
+import { useFetch } from '../../hooks/useFetch'
 import Input from '../../components/Input'
+import Head from '../../utils/Head'
 
 import './styles.scss'
-import { Link } from 'react-router-dom'
-import { useFetch } from '../../hooks/useFetch'
 
 const Register = () => {
-  const { login } = useContext(AuthContext)
+  const { login, userLogged } = useContext(AuthContext)
   const { loading, error, request } = useFetch()
 
   const schema = yup.object().shape({
@@ -79,102 +80,114 @@ const Register = () => {
     login(email, password)
   }
 
+  if (userLogged)
+    return (
+      <Redirect
+        to={{
+          pathname: '/minha-conta'
+        }}
+      />
+    )
+
   return (
-    <section className="section-register container">
-      <div className="form-container">
-        <h2>Criar uma conta</h2>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Input
-            label="Nome"
-            type="text"
-            name="name"
-            placeholder="Digites seu nome"
-            register={register}
-            errors={errors}
-            required
-          />
-          <Input
-            label="Email"
-            type="email"
-            name="email"
-            placeholder="Digite seu email"
-            register={register}
-            errors={errors}
-            required
-          />
-          <div className="form-group">
+    <>
+      <Head title="Cadastre-se" description="Página de cadastro" />
+      <section className="section-register container">
+        <div className="form-container">
+          <h2>Criar uma conta</h2>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <Input
-              label="Rua"
+              label="Nome"
               type="text"
-              name="rua"
-              placeholder="Digite o nome da rua"
+              name="name"
+              placeholder="Digites seu nome"
               register={register}
               errors={errors}
               required
             />
             <Input
-              label="Número"
-              type="number"
-              name="numero"
-              placeholder="Numero"
-              min="1"
+              label="Email"
+              type="email"
+              name="email"
+              placeholder="Digite seu email"
               register={register}
               errors={errors}
               required
             />
-          </div>
+            <div className="form-group">
+              <Input
+                label="Rua"
+                type="text"
+                name="rua"
+                placeholder="Digite o nome da rua"
+                register={register}
+                errors={errors}
+                required
+              />
+              <Input
+                label="Número"
+                type="number"
+                name="numero"
+                placeholder="Numero"
+                min="1"
+                register={register}
+                errors={errors}
+                required
+              />
+            </div>
 
-          <Input
-            label="Bairro"
-            type="text"
-            name="bairro"
-            placeholder="Digite o nome do bairro"
-            register={register}
-            errors={errors}
-            required
-          />
-          <div className="form-group">
             <Input
-              label="Cidade"
+              label="Bairro"
               type="text"
-              name="cidade"
-              placeholder="Digite o nome da cidade"
+              name="bairro"
+              placeholder="Digite o nome do bairro"
               register={register}
               errors={errors}
               required
             />
-            <Input
-              label="UF"
-              type="text"
-              name="uf"
-              placeholder="ex: MG"
-              register={register}
-              errors={errors}
-              required
-            />
-          </div>
+            <div className="form-group">
+              <Input
+                label="Cidade"
+                type="text"
+                name="cidade"
+                placeholder="Digite o nome da cidade"
+                register={register}
+                errors={errors}
+                required
+              />
+              <Input
+                label="UF"
+                type="text"
+                name="uf"
+                placeholder="ex: MG"
+                register={register}
+                errors={errors}
+                required
+              />
+            </div>
 
-          <Input
-            label="Senha"
-            type="password"
-            name="password"
-            placeholder="Digite sua senha"
-            register={register}
-            errors={errors}
-            required
-          />
-          {loading ? (
-            <button disabled>Cadastrando...</button>
-          ) : (
-            <button>Cadastrar</button>
-          )}
-        </form>
-        <div className="box-redirect-login">
-          <Link to="/login">Já tem uma conta? Acesse!</Link>
+            <Input
+              label="Senha"
+              type="password"
+              name="password"
+              placeholder="Digite sua senha"
+              register={register}
+              errors={errors}
+              required
+            />
+            {loading ? (
+              <button disabled>Cadastrando...</button>
+            ) : (
+              <button>Cadastrar</button>
+            )}
+          </form>
+          <div className="box-redirect-login">
+            <Link to="/login">Já tem uma conta? Acesse!</Link>
+          </div>
         </div>
-      </div>
-      {error && <p>{error}</p>}
-    </section>
+        {error && <p>{error}</p>}
+      </section>
+    </>
   )
 }
 

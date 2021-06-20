@@ -12,6 +12,7 @@ import { AuthContext } from '../../context/AuthContext'
 
 import AnimalDetails from '../../components/AnimalDetails'
 import Input from '../../components/Input'
+import Head from '../../utils/Head'
 
 import './styles.scss'
 
@@ -58,73 +59,81 @@ const FinalizarAdocao = () => {
   if (loading) return <p>Carregando...</p>
   if (data)
     return (
-      <section className="section-finalizar-adocao container">
-        <div
-          className={`wrapper ${isSuccessSubmitingForm ? 'hide-wrapper' : ''}`}
-        >
-          <AnimalDetails data={data} page="finalizar-adocao" />
+      <>
+        <Head
+          title="Finalizar adoção"
+          description="Página de finalizar adoção"
+        />
+        <section className="section-finalizar-adocao container">
+          <div
+            className={`wrapper ${
+              isSuccessSubmitingForm ? 'hide-wrapper' : ''
+            }`}
+          >
+            <AnimalDetails data={data} page="finalizar-adocao" />
 
-          <div className="form-adocao">
-            <h2>Formulário de adoção</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-              <Input
-                label="Nome"
-                type="text"
-                placeholder="Seu nome aqui"
-                name="name"
-                register={register}
-                errors={errors}
-                defaultValue={userInfo.name}
-                required
-              />
-              <Input
-                label="Email"
-                type="email"
-                placeholder="Seu email aqui"
-                name="email"
-                value={userInfo.email}
-                register={register}
-                errors={errors}
-                disabled
-                required
-              />
-              <input
-                type="hidden"
-                name="email"
-                value={userInfo.email}
-                {...register('email')}
-              />
-              <Input
-                label="Telefone"
-                type="text"
-                placeholder="(35) 9999-9999"
-                name="telephone"
-                register={register}
-                errors={errors}
-                required
-              />
-              <button>Confirmar Adoção</button>
-            </form>
+            <div className="form-adocao">
+              <h2>Formulário de adoção</h2>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <Input
+                  label="Nome"
+                  type="text"
+                  placeholder="Seu nome aqui"
+                  name="name"
+                  register={register}
+                  errors={errors}
+                  defaultValue={userInfo.name}
+                  required
+                />
+                <Input
+                  label="Email"
+                  type="email"
+                  placeholder="Seu email aqui"
+                  name="email"
+                  value={userInfo.email}
+                  register={register}
+                  errors={errors}
+                  disabled
+                  required
+                />
+                <input
+                  type="hidden"
+                  name="email"
+                  value={userInfo.email}
+                  {...register('email')}
+                />
+                <Input
+                  label="Telefone"
+                  type="text"
+                  placeholder="(35) 9999-9999"
+                  name="telephone"
+                  register={register}
+                  errors={errors}
+                  required
+                />
+                <button>Confirmar Adoção</button>
+              </form>
+            </div>
           </div>
-        </div>
-        <div
-          className={`info-success ${
-            isSuccessSubmitingForm ? 'show-info-success' : ''
-          }`}
-        >
-          <div className="box-message">
-            <FontAwesomeIcon icon={faCheckSquare} size="7x" color="#35CE8D" />
-            <h2>Solicitação enviada com sucesso.</h2>
-            <p>Agradecemos seu intereese em adotar este animal.</p>
-            <p>
-              Em breve enviaremos um email com informações sobre a entrevista de
-              adoçao.
-            </p>
+          <div
+            className={`info-success ${
+              isSuccessSubmitingForm ? 'show-info-success' : ''
+            }`}
+          >
+            <div className="box-message">
+              <FontAwesomeIcon icon={faCheckSquare} size="7x" color="#35CE8D" />
+              <h2>Solicitação enviada com sucesso.</h2>
+              <p>Agradecemos seu intereese em adotar este animal.</p>
+              <p>
+                Em breve enviaremos um email com informações sobre a entrevista
+                de adoçao.
+              </p>
 
-            <Link to="/">Voltar pra Home</Link>
+              <Link to="/">Voltar pra Home</Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </>
     )
   else return null
 }

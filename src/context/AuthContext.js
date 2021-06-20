@@ -54,7 +54,7 @@ export const AuthProvider = ({ children }) => {
       setUserLogged(true)
 
       let { from } = location.state || { from: { pathname: '/' } }
-      history.push(from)
+      history.replace(from)
     } catch (err) {
       setError(err.response?.data.message)
       setUserLogged(false)

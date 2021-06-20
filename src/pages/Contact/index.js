@@ -4,6 +4,7 @@ import emailjs from 'emailjs-com'
 import { useToasts } from 'react-toast-notifications'
 
 import './styles.scss'
+import Head from '../../utils/Head'
 
 const Contact = () => {
   const [userName, setUserName] = useState('')
@@ -45,46 +46,49 @@ const Contact = () => {
     }
   }
   return (
-    <section className="section-contact container">
-      <h2>Contato</h2>
+    <>
+      <Head title="Contato" description="Página de contato" />
+      <section className="section-contact container">
+        <h2>Contato</h2>
 
-      <form className="contact-form" onSubmit={sendEmail}>
-        <label htmlFor="userName">Nome</label>
-        <input
-          type="text"
-          id="userName"
-          name="userName"
-          value={userName}
-          placeholder="Seu nome"
-          required
-          onChange={(event) => setUserName(event.target.value)}
-        />
-        <label htmlFor="userEmail">Email</label>
-        <input
-          type="email"
-          id="userEmail"
-          name="userEmail"
-          value={userEmail}
-          placeholder="email@example.com"
-          required
-          onChange={(event) => setUserEmail(event.target.value)}
-        />
-        <label htmlFor={message}>Mensagem</label>
-        <textarea
-          id="message"
-          name="message"
-          value={message}
-          placeholder="Mensagem..."
-          required
-          onChange={(event) => setMessage(event.target.value)}
-        />
-        {loading ? (
-          <button disabled>Enviando...</button>
-        ) : (
-          <button>Enviar</button>
-        )}
-      </form>
-    </section>
+        <form className="contact-form" onSubmit={sendEmail}>
+          <label htmlFor="userName">Nome</label>
+          <input
+            type="text"
+            id="userName"
+            name="userName"
+            value={userName}
+            placeholder="Seu nome"
+            required
+            onChange={(event) => setUserName(event.target.value)}
+          />
+          <label htmlFor="userEmail">Email</label>
+          <input
+            type="email"
+            id="userEmail"
+            name="userEmail"
+            value={userEmail}
+            placeholder="email@example.com"
+            required
+            onChange={(event) => setUserEmail(event.target.value)}
+          />
+          <label htmlFor={message}>Mensagem</label>
+          <textarea
+            id="message"
+            name="message"
+            value={message}
+            placeholder="Mensagem..."
+            required
+            onChange={(event) => setMessage(event.target.value)}
+          />
+          {loading ? (
+            <button disabled>Enviando...</button>
+          ) : (
+            <button>Enviar</button>
+          )}
+        </form>
+      </section>
+    </>
   )
 }
 

@@ -8,6 +8,7 @@ import { useFetch } from '../../hooks/useFetch'
 
 import Input from '../../components/Input'
 import UpdatePassword from '../../components/UpdatePassword'
+import Head from '../../utils/Head'
 
 import './styles.scss'
 
@@ -74,91 +75,94 @@ const Account = () => {
   if (error) return <p>{error}</p>
   if (loading) return <p>Carregando...</p>
   return (
-    <section className="section-account container">
-      <h2>Seus dados</h2>
-      <div className="wrapper">
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <fieldset>
-            <legend>Contato</legend>
-            <Input
-              label="Nome"
-              type="text"
-              name="name"
-              placeholder="Digite seu nome"
-              register={register}
-              errors={errors}
-            />
-            <Input
-              label="Email"
-              type="email"
-              name="email"
-              placeholder="Digite seu email"
-              register={register}
-              errors={errors}
-            />
-            <Input
-              label="Telefone"
-              type="tel"
-              name="telephone"
-              placeholder="(00) 9999-9999"
-              register={register}
-              errors={errors}
-            />
-          </fieldset>
-          <fieldset>
-            <legend>Endereço</legend>
-            <div className="form-group">
+    <>
+      <Head title="Minha conta" description="Página minha conta" />
+      <section className="section-account container">
+        <h2>Seus dados</h2>
+        <div className="wrapper">
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <fieldset>
+              <legend>Contato</legend>
               <Input
-                label="Rua"
+                label="Nome"
                 type="text"
-                name="rua"
-                placeholder="Digite o nome da rua"
+                name="name"
+                placeholder="Digite seu nome"
                 register={register}
                 errors={errors}
               />
               <Input
-                label="Número"
-                type="number"
-                name="numero"
-                placeholder="Numero"
-                min="1"
+                label="Email"
+                type="email"
+                name="email"
+                placeholder="Digite seu email"
                 register={register}
                 errors={errors}
               />
-            </div>
+              <Input
+                label="Telefone"
+                type="tel"
+                name="telephone"
+                placeholder="(00) 9999-9999"
+                register={register}
+                errors={errors}
+              />
+            </fieldset>
+            <fieldset>
+              <legend>Endereço</legend>
+              <div className="form-group">
+                <Input
+                  label="Rua"
+                  type="text"
+                  name="rua"
+                  placeholder="Digite o nome da rua"
+                  register={register}
+                  errors={errors}
+                />
+                <Input
+                  label="Número"
+                  type="number"
+                  name="numero"
+                  placeholder="Numero"
+                  min="1"
+                  register={register}
+                  errors={errors}
+                />
+              </div>
 
-            <Input
-              label="Bairro"
-              type="text"
-              name="bairro"
-              placeholder="Digite o nome do bairro"
-              register={register}
-              errors={errors}
-            />
-            <div className="form-group">
               <Input
-                label="Cidade"
+                label="Bairro"
                 type="text"
-                name="cidade"
-                placeholder="Digite o nome da cidade"
+                name="bairro"
+                placeholder="Digite o nome do bairro"
                 register={register}
                 errors={errors}
               />
-              <Input
-                label="UF"
-                type="text"
-                name="uf"
-                placeholder="ex: MG"
-                register={register}
-                errors={errors}
-              />
-            </div>
-          </fieldset>
-          <button>Salvar</button>
-        </form>
-        <UpdatePassword />
-      </div>
-    </section>
+              <div className="form-group">
+                <Input
+                  label="Cidade"
+                  type="text"
+                  name="cidade"
+                  placeholder="Digite o nome da cidade"
+                  register={register}
+                  errors={errors}
+                />
+                <Input
+                  label="UF"
+                  type="text"
+                  name="uf"
+                  placeholder="ex: MG"
+                  register={register}
+                  errors={errors}
+                />
+              </div>
+            </fieldset>
+            <button>Salvar</button>
+          </form>
+          <UpdatePassword />
+        </div>
+      </section>
+    </>
   )
 }
 

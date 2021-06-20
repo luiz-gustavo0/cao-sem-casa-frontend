@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import AnimalDetails from '../../components/AnimalDetails'
 
 import { useFetch } from '../../hooks/useFetch'
+import AnimalDetails from '../../components/AnimalDetails'
+import Head from '../../utils/Head'
 
 import './styles.scss'
 
@@ -24,11 +25,14 @@ const AnimalProfile = () => {
   if (loading) return <p>Carregando...</p>
   if (data)
     return (
-      <section className="section-animal-profile container">
-        <div className="wrapper">
-          <AnimalDetails data={data} page="animal-profile" />
-        </div>
-      </section>
+      <>
+        <Head title={data.name} description="Página de perfil do animal" />
+        <section className="section-animal-profile container">
+          <div className="wrapper">
+            <AnimalDetails data={data} page="animal-profile" />
+          </div>
+        </section>
+      </>
     )
   else return null
 }
