@@ -19,19 +19,29 @@ const Header = () => {
         <nav className={`header-menu ${isActive ? 'active' : ''} `}>
           <ul>
             <li>
-              <Link to="/">HOME</Link>
+              <Link to="/" onClick={() => setIsActive(!isActive)}>
+                HOME
+              </Link>
             </li>
             <li>
-              <a href="#">SOBRE NÓS</a>
+              <a href="#" onClick={() => setIsActive(!isActive)}>
+                SOBRE NÓS
+              </a>
             </li>
             <li>
-              <a href="#">AJUDAR</a>
+              <a href="#" onClick={() => setIsActive(!isActive)}>
+                AJUDAR
+              </a>
             </li>
             <li>
-              <Link to="/adotar">ADOTAR</Link>
+              <Link to="/adotar" onClick={() => setIsActive(!isActive)}>
+                ADOTAR
+              </Link>
             </li>
             <li>
-              <a href="#">CONTATO</a>
+              <Link to="/contact" onClick={() => setIsActive(!isActive)}>
+                CONTATO
+              </Link>
             </li>
           </ul>
 
@@ -43,7 +53,9 @@ const Header = () => {
               <div
                 className={`dropdown ${openDopdown ? 'dropdown-active' : ''}`}
               >
-                <Link to="/conta">Minha conta</Link>
+                <Link to="/minha-conta" onClick={() => setIsActive(!isActive)}>
+                  Minha conta
+                </Link>
                 <button className="btn-logout" onClick={logout}>
                   Sair
                 </button>

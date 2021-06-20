@@ -1,0 +1,137 @@
+.section-finalizar-adocao {
+  padding: 6rem 2rem;
+
+  .hide-wrapper {
+    &.wrapper {
+      display: none;
+    }
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 4rem;
+
+    .form-adocao {
+      width: 100%;
+      max-width: 35rem;
+      padding: 2rem 2rem 1rem;
+      border-radius: 0.5rem;
+      background: #fff;
+      box-shadow: 0rem 0.6rem 1rem rgba(112, 108, 97, 25%);
+
+      h2 {
+        font-size: 2.4rem;
+        margin-bottom: 2rem;
+        font-weight: 600;
+      }
+
+      form {
+        min-height: 32rem;
+
+        button {
+          width: 100%;
+          display: block;
+          font-size: 1.6rem;
+          text-align: center;
+          text-transform: uppercase;
+          background: var(--primary-color);
+          border: 1px solid var(--primary-color);
+          padding: 1rem 2rem;
+          border-radius: 0.5rem;
+          color: #fff;
+          margin-top: 3rem;
+          transition: all 0.2s;
+
+          &:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .info-success {
+    display: none;
+    padding: 6rem 2rem;
+  }
+  .box-message {
+    max-width: 50rem;
+    text-align: center;
+
+    h2 {
+      font-size: 3rem;
+      margin: 2rem 0;
+      color: #18925ffb;
+      font-weight: 600;
+    }
+
+    p {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+    }
+
+    a {
+      display: block;
+      font-size: 1.4rem;
+      font-weight: 500;
+      margin-top: 4rem;
+      text-decoration: underline;
+      color: var(--secundary-color);
+    }
+  }
+
+  .show-info-success {
+    &.info-success {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+@media (max-width: 960px) {
+  .section-finalizar-adocao {
+    .wrapper {
+      flex-direction: column;
+      align-items: center;
+
+      .form-adocao {
+        max-width: 50rem;
+        box-shadow: none;
+
+        h2 {
+          text-align: center;
+          margin-bottom: 3rem;
+        }
+      }
+    }
+
+    .box-message {
+      h2 {
+        font-size: 2.4rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .section-finalizar-adocao {
+    .wrapper {
+      .form-adocao {
+        form {
+          button {
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+  }
+}

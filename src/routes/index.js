@@ -6,6 +6,10 @@ import Adotar from '../pages/Adotar'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
 import AnimalProfile from '../pages/AnimalProfile'
+import FinalizarAdocao from '../pages/FinalizarAdocao'
+import PrivateRoute from '../components/PrivateRoute'
+import Contact from '../pages/Contact'
+import Account from '../pages/Account'
 
 const Routes = () => {
   return (
@@ -15,6 +19,13 @@ const Routes = () => {
       <Route path="/register" component={Register} />
       <Route path="/adotar" component={Adotar} />
       <Route path="/animal-profile/:id" component={AnimalProfile} />
+      <Route path="/contact" component={Contact} />
+      <PrivateRoute path="/finalizar-adocao/:id">
+        <FinalizarAdocao />
+      </PrivateRoute>
+      <PrivateRoute path="/minha-conta">
+        <Account />
+      </PrivateRoute>
     </Switch>
   )
 }

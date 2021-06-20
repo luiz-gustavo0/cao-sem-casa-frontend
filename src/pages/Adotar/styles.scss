@@ -34,11 +34,12 @@
       display: inline-block;
       font-size: 1.6rem;
       text-align: center;
-      color: var(--white-color);
+      text-transform: uppercase;
+      color: var(--gray-color);
       padding: 1rem 2.5rem;
       border: 1px solid var(--gray-color);
       border-radius: 0.5rem;
-      background: var(--gray-color);
+      background: var(--white-color);
       box-shadow: 0 0.3rem 0.6rem rgba(0, 0, 0, 0.2);
       transition: all 0.2s;
 
@@ -48,8 +49,8 @@
       }
 
       &:hover {
-        background: var(--white-color);
-        color: var(--gray-color);
+        background: var(--gray-color);
+        color: var(--white-color);
       }
     }
   }
@@ -57,10 +58,25 @@
 
 @media (max-width: 500px) {
   .section-adotar {
+    .box-text {
+      h2 {
+        font-size: 2.8rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+      }
+    }
     .cards-container {
       ul {
         align-content: center;
         justify-content: center;
+      }
+    }
+
+    .load-more {
+      button {
+        font-size: 1.4rem;
       }
     }
   }

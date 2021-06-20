@@ -5,6 +5,7 @@ import { useFetch } from '../../hooks/useFetch'
 import ongMembersImg from '../../assets/img-ong-members.png'
 import heroImg from '../../assets/hero.png'
 import Card from '../../components/Card'
+import Head from '../../utils/Head'
 
 import './styles.scss'
 
@@ -24,6 +25,7 @@ const Home = () => {
 
   return (
     <>
+      <Head title="Home" description="Página inicial" />
       <section className="section-hero container">
         <div className="box-principal">
           <h1>Adote, não compre.</h1>

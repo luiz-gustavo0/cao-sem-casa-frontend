@@ -1,0 +1,82 @@
+.section-account {
+  padding: 6rem 2rem;
+
+  h2 {
+    font-size: 3.2rem;
+    margin-bottom: 3rem;
+    font-weight: 600;
+    color: var(--gray-color);
+  }
+
+  .wrapper {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  form {
+    width: 100%;
+    max-width: 50rem;
+
+    fieldset {
+      padding: 2rem;
+      margin-bottom: 2rem;
+      border-color: #fff;
+      border-radius: 0.5rem;
+
+      legend {
+        font-size: 2rem;
+        color: inherit;
+        font-weight: 500;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+    }
+
+    button {
+      padding: 1rem 2rem;
+      border: none;
+      background: var(--primary-color);
+      color: #fff;
+      border-radius: 0.5rem;
+      text-transform: uppercase;
+      width: 100%;
+      max-width: 13rem;
+      transition: all 0.2s;
+
+      &:hover,
+      &:focus {
+        background: var(--primary-color-80);
+      }
+
+      &:disabled {
+        cursor: wait;
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .section-account {
+    form {
+      margin-bottom: 4rem;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .section-account {
+    .form-group {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 0 !important;
+    }
+  }
+}

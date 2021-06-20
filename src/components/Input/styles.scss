@@ -25,9 +25,16 @@
       border-color: var(--gray-color);
     }
 
-    &:invalid,
-    &:required {
+    &:invalid {
       border-color: rgba(255, 0, 0, 0.877);
+    }
+
+    &:disabled {
+      background: rgba(153, 153, 153, 0.192);
+
+      &:hover {
+        border-color: rgba(153, 153, 153, 0.192);
+      }
     }
   }
 
@@ -35,5 +42,14 @@
     color: rgba(255, 0, 0, 0.877);
     font-size: 1.2rem;
     font-weight: 500;
+  }
+}
+
+@media (max-width: 600px) {
+  .input-group {
+    label,
+    input {
+      font-size: 1.4rem;
+    }
   }
 }

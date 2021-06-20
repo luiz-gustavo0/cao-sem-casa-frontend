@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { useFetch } from '../../hooks/useFetch'
 
 import Card from '../../components/Card'
+import Head from '../../utils/Head'
 
 import './styles.scss'
 
@@ -35,29 +36,33 @@ const Adotar = () => {
   }
 
   return (
-    <section className="section-adotar container">
-      <div className="box-text">
-        <h2>Encontre o seu novo amigo</h2>
-        <p>
-          Temos uma listagem com vários cachorrinhos e gatinhos, se preferir
-          algum tipo específico utilize o filtro para definir suas preferências
-        </p>
-      </div>
+    <>
+      <Head title="Adotar" description="Adote um amigo" />
+      <section className="section-adotar container">
+        <div className="box-text">
+          <h2>Encontre o seu novo amigo</h2>
+          <p>
+            Temos uma listagem com vários cachorrinhos e gatinhos, se preferir
+            algum tipo específico utilize o filtro para definir suas
+            preferências
+          </p>
+        </div>
 
-      {loading && <p>Carregando...</p>}
-      {error && <p>Ocorreu um erro, Não foi possivel carregar os dados.</p>}
-      <div className="cards-container">
-        <ul>
-          {data &&
-            data.map((animalInfo) => (
-              <Card key={animalInfo.id} data={animalInfo} />
-            ))}
-        </ul>
-      </div>
-      <div className="load-more">
-        <button onClick={handleClick}>Carregar mais</button>
-      </div>
-    </section>
+        {loading && <p>Carregando...</p>}
+        {error && <p>Ocorreu um erro, Não foi possivel carregar os dados.</p>}
+        <div className="cards-container">
+          <ul>
+            {data &&
+              data.map((animalInfo) => (
+                <Card key={animalInfo.id} data={animalInfo} />
+              ))}
+          </ul>
+        </div>
+        <div className="load-more">
+          <button onClick={handleClick}>Carregar mais</button>
+        </div>
+      </section>
+    </>
   )
 }
 
