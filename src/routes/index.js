@@ -9,6 +9,7 @@ import AnimalProfile from '../pages/AnimalProfile'
 import FinalizarAdocao from '../pages/FinalizarAdocao'
 import PrivateRoute from '../components/PrivateRoute'
 import Contact from '../pages/Contact'
+import Account from '../pages/Account'
 
 const Routes = () => {
   return (
@@ -22,7 +23,9 @@ const Routes = () => {
       <PrivateRoute path="/finalizar-adocao/:id">
         <FinalizarAdocao />
       </PrivateRoute>
-      {/* <Route path="/finalizar-adocao/:id" component={FinalizarAdocao} /> */}
+      <PrivateRoute path="/minha-conta">
+        <Account />
+      </PrivateRoute>
     </Switch>
   )
 }

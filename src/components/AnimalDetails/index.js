@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import React, { useContext } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {
@@ -7,13 +7,10 @@ import {
   faTablets,
   faUserMd
 } from '@fortawesome/free-solid-svg-icons'
-import { AuthContext } from '../../context/AuthContext'
 
 import './styles.scss'
 
 const AnimalDetails = ({ data, page }) => {
-  const { userLogged } = useContext(AuthContext)
-
   return (
     <div className={`animal-profile ${page == 'animal-profile' ? 'xl' : ''}`}>
       <div className="animal-foto">
@@ -50,10 +47,9 @@ const AnimalDetails = ({ data, page }) => {
             <span>{data.castrado === 'sim' ? 'Castrado' : 'Não castrado'}</span>
           </div>
         </div>
-        {!userLogged ||
-          (page == 'animal-profile' && (
-            <Link to={`/finalizar-adocao/${data.id}`}>Adotar</Link>
-          ))}
+        {page == 'animal-profile' && (
+          <Link to={`/finalizar-adocao/${data.id}`}>Adotar</Link>
+        )}
       </div>
     </div>
   )

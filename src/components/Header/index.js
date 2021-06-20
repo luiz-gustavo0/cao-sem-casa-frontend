@@ -43,7 +43,7 @@ const Header = () => {
               <div
                 className={`dropdown ${openDopdown ? 'dropdown-active' : ''}`}
               >
-                <Link to="/conta">Minha conta</Link>
+                <Link to="/minha-conta">Minha conta</Link>
                 <button className="btn-logout" onClick={logout}>
                   Sair
                 </button>

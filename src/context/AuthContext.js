@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { createContext, useCallback, useState } from 'react'
 import { useHistory } from 'react-router'
+import { useLocation } from 'react-router-dom'
 import api from '../services/api'
 
 export const AuthContext = createContext()
@@ -11,6 +12,8 @@ export const AuthProvider = ({ children }) => {
   const [userLogged, setUserLogged] = useState(null)
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState(null)
+
+  const location = useLocation()
 
   const history = useHistory()
 
@@ -29,7 +32,7 @@ export const AuthProvider = ({ children }) => {
     setLoading(false)
   }, [])
 
-  async function login(email, password, location) {
+  async function login(email, password) {
     try {
       setError(null)
       setLoading(true)
@@ -49,7 +52,9 @@ export const AuthProvider = ({ children }) => {
 
       setUserInfo(user)
       setUserLogged(true)
-      history.push(location)
+
+      let { from } = location.state || { from: { pathname: '/' } }
+      history.push(from)
     } catch (err) {
       setError(err.response?.data.message)
       setUserLogged(false)
