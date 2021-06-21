@@ -42,9 +42,8 @@ const Adotar = () => {
         <div className="box-text">
           <h2>Encontre o seu novo amigo</h2>
           <p>
-            Temos uma listagem com vários cachorrinhos e gatinhos, se preferir
-            algum tipo específico utilize o filtro para definir suas
-            preferências
+            Temos uma listagem com vários cachorrinhos e gatinhos a procura de
+            um novo lar.
           </p>
         </div>
 

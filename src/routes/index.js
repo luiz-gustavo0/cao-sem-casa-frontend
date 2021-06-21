@@ -10,6 +10,7 @@ import FinalizarAdocao from '../pages/FinalizarAdocao'
 import PrivateRoute from '../components/PrivateRoute'
 import Contact from '../pages/Contact'
 import Account from '../pages/Account'
+import About from '../pages/Aobout'
 
 const Routes = () => {
   return (
@@ -20,6 +21,7 @@ const Routes = () => {
       <Route path="/adotar" component={Adotar} />
       <Route path="/animal-profile/:id" component={AnimalProfile} />
       <Route path="/contact" component={Contact} />
+      <Route path="/about" component={About} />
       <PrivateRoute path="/finalizar-adocao/:id">
         <FinalizarAdocao />
       </PrivateRoute>
