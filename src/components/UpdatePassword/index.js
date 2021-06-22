@@ -45,37 +45,39 @@ const UpdatePassword = () => {
   }
 
   return (
-    <div className="box-form-update">
-      {error && <p>{error}</p>}
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <fieldset>
-          <legend>Alterar senha</legend>
-          <Input
-            label="Senha atual"
-            type="password"
-            name="password"
-            placeholder="Senha atual"
-            register={register}
-            errors={errors}
-            required
-          />
-          <Input
-            label="Nova senha"
-            type="password"
-            name="newPassword"
-            placeholder="Nova senha"
-            register={register}
-            errors={errors}
-            required
-          />
-        </fieldset>
-        {loading ? (
-          <button disabled>Atualizando...</button>
-        ) : (
-          <button>Atualizar</button>
-        )}
-      </form>
-    </div>
+    <>
+      <div className="box-form-update">
+        {error && <p className="alterar-senha-error">* {error}</p>}
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <fieldset>
+            <legend>Alterar senha</legend>
+            <Input
+              label="Senha atual"
+              type="password"
+              name="password"
+              placeholder="Senha atual"
+              register={register}
+              errors={errors}
+              required
+            />
+            <Input
+              label="Nova senha"
+              type="password"
+              name="newPassword"
+              placeholder="Nova senha"
+              register={register}
+              errors={errors}
+              required
+            />
+          </fieldset>
+          {loading ? (
+            <button disabled>Atualizando...</button>
+          ) : (
+            <button>Atualizar</button>
+          )}
+        </form>
+      </div>
+    </>
   )
 }
 

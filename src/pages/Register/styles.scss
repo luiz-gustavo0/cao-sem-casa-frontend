@@ -16,6 +16,14 @@
       margin-bottom: 3rem;
     }
 
+    .error-register {
+      display: inline-block;
+      background: rgba(250, 14, 14, 0.726);
+      padding: 0.5rem 2rem;
+      color: #fff;
+      font-size: 1.4rem;
+    }
+
     form {
       width: 100%;
       max-width: 50rem;

@@ -1,4 +1,13 @@
 .box-form-update {
   width: 100%;
   max-width: 50rem;
+
+  .alterar-senha-error {
+    padding: 0.5rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin: -3rem auto 0;
+    text-align: center;
+    color: rgba(255, 0, 0, 0.877);
+  }
 }
