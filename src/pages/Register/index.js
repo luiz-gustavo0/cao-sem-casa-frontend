@@ -74,8 +74,6 @@ const Register = () => {
       data: formData
     })
 
-    console.log(response)
-
     if (!response) {
       return
     }

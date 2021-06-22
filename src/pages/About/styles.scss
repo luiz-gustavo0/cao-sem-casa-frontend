@@ -36,3 +36,17 @@
     }
   }
 }
+
+@media (max-width: 600px) {
+  .about {
+    font-size: 1.4rem;
+
+    h2 {
+      font-size: 2.8rem;
+    }
+
+    .container-card {
+      flex-direction: column;
+    }
+  }
+}

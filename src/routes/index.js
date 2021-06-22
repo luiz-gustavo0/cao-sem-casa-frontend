@@ -10,7 +10,7 @@ import FinalizarAdocao from '../pages/FinalizarAdocao'
 import PrivateRoute from '../components/PrivateRoute'
 import Contact from '../pages/Contact'
 import Account from '../pages/Account'
-import About from '../pages/Aobout'
+import About from '../pages/About'
 
 const Routes = () => {
   return (

@@ -5,6 +5,7 @@ import { useFetch } from '../../hooks/useFetch'
 import ongMembersImg from '../../assets/img-ong-members.png'
 import heroImg from '../../assets/hero.png'
 import Card from '../../components/Card'
+import Loading from '../../components/Loading'
 import Head from '../../utils/Head'
 
 import './styles.scss'
@@ -65,7 +66,7 @@ const Home = () => {
           <Link to="/adocao">Ver lista completa &#129042;</Link>
         </div>
 
-        {loading && <p>Carregando...</p>}
+        {loading && <Loading />}
         {error && <p>Ocorreu um erro, tente novamente mais tarde.</p>}
         <div className="box-cards-animals">
           <ul>

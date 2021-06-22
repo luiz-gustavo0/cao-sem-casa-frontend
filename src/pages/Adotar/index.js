@@ -3,6 +3,7 @@ import { useFetch } from '../../hooks/useFetch'
 
 import Card from '../../components/Card'
 import Head from '../../utils/Head'
+import Loading from '../../components/Loading'
 
 import './styles.scss'
 
@@ -39,6 +40,8 @@ const Adotar = () => {
     <>
       <Head title="Adotar" description="Adote um amigo" />
       <section className="section-adotar container">
+        {loading && <Loading />}
+
         <div className="box-text">
           <h2>Encontre o seu novo amigo</h2>
           <p>
@@ -47,7 +50,6 @@ const Adotar = () => {
           </p>
         </div>
 
-        {loading && <p>Carregando...</p>}
         {error && <p>Ocorreu um erro, Não foi possivel carregar os dados.</p>}
         <div className="cards-container">
           <ul>

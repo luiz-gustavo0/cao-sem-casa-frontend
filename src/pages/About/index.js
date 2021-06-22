@@ -2,9 +2,9 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPaw, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { faCreativeCommonsNc } from '@fortawesome/free-brands-svg-icons'
+import Head from '../../utils/Head'
 
 import './styles.scss'
-import Head from '../../utils/Head'
 
 const About = () => {
   return (
