@@ -24,15 +24,11 @@ const Header = () => {
               </Link>
             </li>
             <li>
-              <a href="#" onClick={() => setIsActive(!isActive)}>
+              <Link to="/about" onClick={() => setIsActive(!isActive)}>
                 SOBRE NÓS
-              </a>
+              </Link>
             </li>
-            <li>
-              <a href="#" onClick={() => setIsActive(!isActive)}>
-                AJUDAR
-              </a>
-            </li>
+
             <li>
               <Link to="/adotar" onClick={() => setIsActive(!isActive)}>
                 ADOTAR

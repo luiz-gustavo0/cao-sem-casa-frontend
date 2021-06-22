@@ -7,7 +7,7 @@
   label {
     font-size: 1.6rem;
     margin-bottom: 0.5rem;
-    color: var(--gray-color);
+    color: inherit;
   }
 
   input {
@@ -16,9 +16,13 @@
     border: 1px solid rgba(153, 153, 153, 0.596);
     border-radius: 0.5rem;
     background: #fff;
-    color: var(--gray-color);
+    color: inherit;
     margin-bottom: 0.3rem;
     transition: all 0.2s;
+
+    &::placeholder {
+      color: var(--gray-color);
+    }
 
     &:hover,
     &:focus {

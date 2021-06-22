@@ -22,7 +22,7 @@ const Register = () => {
       .required(),
     email: yup
       .string()
-      .email('Insira im email válido')
+      .email('Insira um email válido')
       .required('Este campo é obrigatório.'),
     password: yup
       .string()
@@ -30,8 +30,9 @@ const Register = () => {
       .required('Este campo é obrigatorio.'),
     rua: yup.string().required('Este campo é obrigatório.'),
     numero: yup
-      .number('Insira um número inteiro e positivo')
-      .positive('Insira um número inteiro e positivo')
+      .string()
+      // .number('Insira um número inteiro e positivo')
+      // .positive('Insira um número inteiro e positivo')
       .required('Este campo é obrigatório.'),
     bairro: yup.string().required('Este campo é obrigatório.'),
     cidade: yup.string().required('Este campo é obrigatório.'),
@@ -73,11 +74,10 @@ const Register = () => {
       data: formData
     })
 
-    if (response.status !== 201) {
+    if (!response) {
       return
     }
-
-    login(email, password)
+    await login(email, password)
   }
 
   if (userLogged)
@@ -95,6 +95,7 @@ const Register = () => {
       <section className="section-register container">
         <div className="form-container">
           <h2>Criar uma conta</h2>
+          {error && <p className="error-register">* {error}</p>}
           <form onSubmit={handleSubmit(onSubmit)}>
             <Input
               label="Nome"
@@ -126,7 +127,7 @@ const Register = () => {
               />
               <Input
                 label="Número"
-                type="number"
+                type="text"
                 name="numero"
                 placeholder="Numero"
                 min="1"
@@ -185,7 +186,6 @@ const Register = () => {
             <Link to="/login">Já tem uma conta? Acesse!</Link>
           </div>
         </div>
-        {error && <p>{error}</p>}
       </section>
     </>
   )
