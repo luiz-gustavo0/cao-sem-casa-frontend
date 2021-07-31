@@ -56,6 +56,7 @@ const Home = () => {
               praesentium dolore tempore nisi quidem veniam debitis sapiente et
               voluptates.
             </p>
+            <Link to="/about">Saiba mais &#129042;</Link>
           </div>
         </div>
       </section>
@@ -63,7 +64,7 @@ const Home = () => {
       <section className="section-animals container">
         <div className="box-heading">
           <h2>Disponíveis para adoção</h2>
-          <Link to="/adocao">Ver lista completa &#129042;</Link>
+          <Link to="/adotar">Ver lista completa &#129042;</Link>
         </div>
 
         {loading && <Loading />}
@@ -85,7 +86,7 @@ const Home = () => {
             resgatando e assim encontrar um novo lar para nosos amigos que vão
             poder ter uma casinha e um dono que o ame para chamar de seu.
           </p>
-          <Link to="ajudar">Saiba mais</Link>
+          <Link to="/about">Saiba mais &#129042;</Link>
         </div>
       </section>
     </>

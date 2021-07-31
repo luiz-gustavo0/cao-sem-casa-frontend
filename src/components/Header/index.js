@@ -10,7 +10,11 @@ import './styles.scss'
 const Header = () => {
   const { userInfo, logout } = useContext(AuthContext)
   const [isActive, setIsActive] = useState(false)
-  const [openDopdown, setOpenDopdown] = useState(false)
+  const [openDropdown, setOpenDropdown] = useState(false)
+
+  const handleClick = () => {
+    setOpenDropdown(!openDropdown)
+  }
 
   return (
     <header className="header">
@@ -43,11 +47,9 @@ const Header = () => {
 
           {userInfo ? (
             <div className="user-info">
-              <span onClick={() => setOpenDopdown(!openDopdown)}>
-                {userInfo.name.substr(0, 1)}
-              </span>
+              <span onClick={handleClick}>{userInfo.name.substr(0, 1)}</span>
               <div
-                className={`dropdown ${openDopdown ? 'dropdown-active' : ''}`}
+                className={`dropdown ${openDropdown ? 'dropdown-active' : ''}`}
               >
                 <Link to="/minha-conta" onClick={() => setIsActive(!isActive)}>
                   Minha conta
