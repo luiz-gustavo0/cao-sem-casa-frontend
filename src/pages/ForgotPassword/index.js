@@ -36,8 +36,9 @@ const ForgotPassword = () => {
       data: { email }
     })
 
-    if (response.status !== 200) {
+    if (!response) {
       setIsFormSuccess(false)
+      return
     }
     setIsFormSuccess(true)
   }
