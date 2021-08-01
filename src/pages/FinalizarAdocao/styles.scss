@@ -1,5 +1,6 @@
 .section-finalizar-adocao {
   padding: 6rem 2rem;
+  min-height: calc(77vh - 7rem);
 
   .hide-wrapper {
     &.wrapper {
@@ -14,9 +15,10 @@
     gap: 4rem;
 
     .form-adocao {
+      align-self: flex-end;
       width: 100%;
       max-width: 35rem;
-      padding: 2rem 2rem 1rem;
+      padding: 2rem;
       border-radius: 0.5rem;
       background: #fff;
       box-shadow: 0rem 0.6rem 1rem rgba(112, 108, 97, 25%);
@@ -28,8 +30,6 @@
       }
 
       form {
-        min-height: 32rem;
-
         button {
           width: 100%;
           display: block;

@@ -1,5 +1,6 @@
 .section-login {
   padding: 6rem 2rem;
+  min-height: calc(77vh - 7rem);
 
   .box-form {
     display: flex;
@@ -66,7 +67,6 @@
 
       a {
         color: #354f70;
-        font-weight: 300;
         transition: all 0.2s;
 
         &:hover {

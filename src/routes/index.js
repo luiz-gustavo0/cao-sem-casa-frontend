@@ -11,6 +11,8 @@ import PrivateRoute from '../components/PrivateRoute'
 import Contact from '../pages/Contact'
 import Account from '../pages/Account'
 import About from '../pages/About'
+import ForgotPassword from '../pages/ForgotPassword'
+import ResetPassword from '../pages/ResetPassword'
 
 const Routes = () => {
   return (
@@ -22,6 +24,8 @@ const Routes = () => {
       <Route path="/animal-profile/:id" component={AnimalProfile} />
       <Route path="/contact" component={Contact} />
       <Route path="/about" component={About} />
+      <Route path="/forgot-password" component={ForgotPassword} />
+      <Route path="/reset-password/:token" component={ResetPassword} />
       <PrivateRoute path="/finalizar-adocao/:id">
         <FinalizarAdocao />
       </PrivateRoute>

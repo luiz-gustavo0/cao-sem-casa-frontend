@@ -21,16 +21,13 @@ const Footer = () => {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/sobre">Sobre nós</Link>
-            </li>
-            <li>
-              <Link to="/ajudar">Ajudar</Link>
+              <Link to="/about">Sobre nós</Link>
             </li>
             <li>
               <Link to="/adotar">Adotar</Link>
             </li>
             <li>
-              <Link to="/contato">Contato</Link>
+              <Link to="/contact">Contato</Link>
             </li>
           </ul>
         </nav>

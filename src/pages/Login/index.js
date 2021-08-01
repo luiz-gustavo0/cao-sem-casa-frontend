@@ -82,7 +82,7 @@ const Login = () => {
           </form>
           <div className="box-redirect">
             <Link to="/register">Cadastre-se!</Link>|
-            <Link to="/forgot_password">Esqueceu sua senha?</Link>
+            <Link to="/forgot-password">Esqueceu sua senha?</Link>
           </div>
         </div>
       </section>

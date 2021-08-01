@@ -1,0 +1,95 @@
+.section-forgot-password {
+  padding: 6rem 2rem;
+  min-height: calc(77vh - 7rem);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  .container-forgot-password {
+    padding: 3rem 0;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    form {
+      padding: 3rem;
+      width: 40rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+
+      h2 {
+        font-size: 3.2rem;
+        font-weight: 500;
+        margin-bottom: 0.3rem;
+      }
+
+      p {
+        font-size: 1.4rem;
+        margin-bottom: 3rem;
+      }
+
+      button {
+        width: 100%;
+        padding: 1.5rem 2rem;
+        font-size: 1.6rem;
+        color: #fff;
+        border: none;
+        border-radius: 0.5rem;
+        background: var(--primary-color);
+        margin-top: -1rem;
+        margin-bottom: 2rem;
+
+        &:disabled {
+          cursor: wait;
+        }
+      }
+
+      a {
+        display: block;
+        font-size: 1.6rem;
+        text-align: center;
+        color: var(--gray-color);
+        font-weight: 600;
+      }
+
+      &.form-disabled {
+        display: none;
+      }
+    }
+
+    .error-message {
+      background: rgba(250, 14, 14, 0.726);
+      padding: 0.5rem 2rem;
+      color: #fff;
+      font-size: 1.4rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  .message-success {
+    display: none;
+    padding: 3rem;
+    width: 40rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+
+    h2 {
+      font-size: 2rem;
+      font-weight: 500;
+      margin-bottom: 2rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+    }
+
+    &.active {
+      display: block;
+    }
+  }
+}
