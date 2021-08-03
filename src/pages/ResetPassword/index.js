@@ -1,5 +1,5 @@
-import React from 'react'
-import { useHistory, useParams } from 'react-router-dom'
+import React, { useEffect, useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
@@ -11,10 +11,6 @@ import './styles.scss'
 import Head from '../../utils/Head'
 
 const schema = yup.object().shape({
-  email: yup
-    .string()
-    .email('Insira im email válido')
-    .required('Este campo é obrigatório.'),
   password: yup
     .string()
     .min(8, 'A senha deve conter no minimo 8 caracteres')
@@ -23,7 +19,8 @@ const schema = yup.object().shape({
 })
 
 const ResetPassword = () => {
-  const { token } = useParams()
+  const [key, setKey] = useState('')
+  const [email, setEmail] = useState('')
   const { loading, error, request } = useFetch()
   const history = useHistory()
 
@@ -35,11 +32,22 @@ const ResetPassword = () => {
     resolver: yupResolver(schema)
   })
 
-  const onSubmit = async ({ email, password }) => {
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search)
+    const key = params.get('key')
+    const email = params.get('email')
+
+    if (key && email) {
+      setKey(key)
+      setEmail(email)
+    }
+  }, [])
+
+  const onSubmit = async ({ password }) => {
     const { response } = await request({
       method: 'post',
       url: '/reset_password',
-      data: { email, password, token }
+      data: { email, password, token: key }
     })
     if (response.status === 200) {
       history.push('/login')
@@ -58,15 +66,7 @@ const ResetPassword = () => {
           <form onSubmit={handleSubmit(onSubmit)}>
             <h2>Crie uma senha nova</h2>
             <span>Crie uma senha nova com pelo menos 8 caracteres</span>
-            <Input
-              label="Confirme seu email"
-              type="email"
-              name="email"
-              placeholder="Digite seu email"
-              register={register}
-              errors={errors}
-              required
-            />
+
             <Input
               label="Nova senha"
               type="password"

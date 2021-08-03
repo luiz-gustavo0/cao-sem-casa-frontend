@@ -25,7 +25,7 @@ const Routes = () => {
       <Route path="/contact" component={Contact} />
       <Route path="/about" component={About} />
       <Route path="/forgot-password" component={ForgotPassword} />
-      <Route path="/reset-password/:token" component={ResetPassword} />
+      <Route path="/reset-password" component={ResetPassword} />
       <PrivateRoute path="/finalizar-adocao/:id">
         <FinalizarAdocao />
       </PrivateRoute>
