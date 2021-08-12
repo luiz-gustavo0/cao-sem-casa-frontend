@@ -35,6 +35,10 @@ cd cao-sem-casa-frontend
 yarn install
 ```
 
+## Links Úteis
+[Dashboard](https://github.com/luiz-gustavo0/cao-sem-casa-dashborad)
+[API](https://github.com/luiz-gustavo0/cao-sem-casa-backend)
+
 ## Author
 
 - LinkedIn: [@luiz-gustavo0](https://www.linkedin.com/in/luiz-gustavo0/)
