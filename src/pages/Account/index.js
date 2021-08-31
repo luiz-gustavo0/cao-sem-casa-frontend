@@ -115,7 +115,7 @@ const Account = () => {
       <Head title="Minha conta" description="Página minha conta" />
       <section className="section-account container">
         {loading && <Loading />}
-        <h2>Seus dados</h2>
+        <h2>Minha Conta</h2>
         <div className="wrapper">
           <form onSubmit={handleSubmit(onSubmit)}>
             <fieldset>
@@ -135,6 +135,7 @@ const Account = () => {
                 placeholder="Digite seu email"
                 register={register}
                 errors={errors}
+                disabled
               />
               <Input
                 label="Telefone"

@@ -8,7 +8,7 @@ import './styles.scss'
 import { Link } from 'react-router-dom'
 
 const Card = ({ data }) => {
-  const { id, name, sexo, idade, foto_url } = data
+  const { id, name, sexo, idade, foto_url, description } = data
 
   return (
     <li className="card-container">
@@ -32,15 +32,12 @@ const Card = ({ data }) => {
         <span
           className="animal-idade"
           style={
-            sexo == 'M' ? { background: '#E5446D' } : { background: '#706C61' }
+            sexo == 'F' ? { background: '#E5446D' } : { background: '#706C61' }
           }
         >
           {idade > 1 ? `${idade} anos` : `${idade} ano`}
         </span>
-        <p className="description">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut, nemo
-          fuga, dicta quae dolorum dolor deleniti earum vitae.
-        </p>
+        <p className="description">{description}</p>
         <Link to={`/animal-profile/${id}`} className="btn-adotar">
           Ver perfil
         </Link>
