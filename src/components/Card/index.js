@@ -8,7 +8,7 @@ import './styles.scss'
 import { Link } from 'react-router-dom'
 
 const Card = ({ data }) => {
-  const { id, name, sexo, idade, foto_url, description } = data
+  const { id, name, sexo, idade, foto_url } = data
 
   return (
     <li className="card-container">
@@ -37,7 +37,9 @@ const Card = ({ data }) => {
         >
           {idade > 1 ? `${idade} anos` : `${idade} ano`}
         </span>
-        <p className="description">{description}</p>
+        <p className="description">
+          Oi eu sou o {name} e eu adoro brincar, quer me adotar?
+        </p>
         <Link to={`/animal-profile/${id}`} className="btn-adotar">
           Ver perfil
         </Link>
